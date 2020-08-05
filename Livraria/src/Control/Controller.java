@@ -1,10 +1,10 @@
-package Control;
+package control;
 
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import Entity.Autores;
+import entity.Autores;
 
 public class Controller {
 	Autores autor = new Autores();
@@ -13,11 +13,11 @@ public class Controller {
 	public void cadastro(String nome, String email) {
 		Date date = new Date();
 		if (nome == null) {
-			System.out.println("O nome não pode estar em branco!");
+			System.out.println("O nome nï¿½o pode estar em branco!");
 		} if(!verificaEmail(email)) {
-				System.out.println("O email não e valido!");
+				System.out.println("O email nï¿½o e valido!");
 			} if (autor.getEmail() == email){
-				System.out.println("O email já esta cadastrado!");
+				System.out.println("O email jï¿½ esta cadastrado!");
 				} else {
 					autor.setNome(nome);
 					autor.setEmail(email);
