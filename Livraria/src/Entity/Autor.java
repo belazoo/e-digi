@@ -2,7 +2,7 @@ package entity;
 
 import java.util.Date;
 
-public class Autores {
+public class Autor {
 	private String email;
 	private String nome;
 	private Date data;
