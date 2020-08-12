@@ -1,16 +1,15 @@
 package main;
 
-import java.util.Scanner;
-
-import control.Controller;
+import entity.Autor;
 
 public class Main {
 	public static void main(String[] args) {
-		Controller c = new Controller();
+		Autor c = new Autor();
 		String nome = "fulano";
 		String email = "fulano@gmail.com";
 		try {
-			c.cadastro(nome, email);
+			c.setNome(nome);
+			c.setEmail(email);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
