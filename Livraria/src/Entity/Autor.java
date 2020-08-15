@@ -11,9 +11,6 @@ public class Autor {
 		super();
 	}
 
-	public String getEmail() {
-		return email;
-	}
 	public void setEmail(String email) {
 		if( email == null || email.isEmpty())
 			System.err.println("O email não pode ser vazio");
@@ -22,13 +19,13 @@ public class Autor {
 
 		this.email = email;
 	}
-	public String getNome() {
-		return nome;
-	}
 	public void setNome(String nome) {
 		if( nome == null || nome.isEmpty())
 			System.err.println("O nome não pode ser vazio! ");
 
 		this.nome = nome;
+	}
+	public void setData(Date data) {
+		this.data = data;
 	}
 }
