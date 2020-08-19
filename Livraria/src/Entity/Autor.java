@@ -7,7 +7,7 @@ public class Autor {
 	private String nome;
 	private Date data;
 
-	public void Autor (String nome, String email, Date data) {
+	public Autor(String nome, String email, Date data) {
 		setNome(email);
 		setEmail(nome);
 		setData(data);
@@ -21,7 +21,7 @@ public class Autor {
 
 		this.email = email;
 	}
-	private void	setNome(String nome) {
+	private void setNome(String nome) {
 		if( nome == null || nome.isEmpty())
 			System.err.println("O nome não pode ser vazio! ");
 
