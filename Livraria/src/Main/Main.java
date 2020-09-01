@@ -1,7 +1,7 @@
 package main;
 
 import entity.Autor;
-import entity.Categoria;
+import Entity.Categoria;
 
 import java.util.Date;
 
@@ -10,10 +10,9 @@ public class Main {
 		String nome = "fulano";
 		String email = "fulano@gmail.com";
 		String nomeCategoria = "Terror";
-		Date data = new Date();
 		try {
-			Categoria c = new Categoria(nomeCategoria, data);
-			Autor a = new Autor(nome, email, data);
+			Categoria c = new Categoria(nomeCategoria);
+			Autor a = new Autor(nome, email);
 		} catch (Exception e) {
 			System.out.println(e);
 		}

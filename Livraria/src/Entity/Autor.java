@@ -7,7 +7,7 @@ public class Autor {
 	private String nome;
 	private Date data;
 
-	public Autor(String nome, String email, Date data) {
+	public Autor(String nome, String email) {
 		setNome(email);
 		setEmail(nome);
 		setData(data);
@@ -15,7 +15,7 @@ public class Autor {
 
 	private void setEmail(String email) {
 		if( email == null || email.isEmpty())
-			System.err.println("O email não pode ser vazio");
+			System.err.println("O email nÃ£o pode ser vazio");
 		if( !email.matches("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"))
 			System.err.println("O formato do email e invalido! ");
 
@@ -23,7 +23,7 @@ public class Autor {
 	}
 	private void setNome(String nome) {
 		if( nome == null || nome.isEmpty())
-			System.err.println("O nome não pode ser vazio! ");
+			System.err.println("O nome nÃ£o pode ser vazio! ");
 
 		this.nome = nome;
 	}
