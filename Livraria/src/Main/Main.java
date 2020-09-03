@@ -10,11 +10,7 @@ public class Main {
 		String nome = "fulano";
 		String email = "fulano@gmail.com";
 		String nomeCategoria = "Terror";
-		try {
-			Categoria c = new Categoria(nomeCategoria);
-			Autor a = new Autor(nome, email);
-		} catch (Exception e) {
-			System.out.println(e);
-		}
+		Categoria c = new Categoria(nomeCategoria);
+		Autor a = new Autor(nome, email);
 	}
 }

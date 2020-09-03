@@ -1,5 +1,6 @@
-package Entity;
+package entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Categoria {
@@ -8,12 +9,14 @@ public class Categoria {
 
     public Categoria(String nome) {
         setNome(nome);
+        Date data = new Date();
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         setData(data);
     }
 
     public void setNome(String nome) {
         if( nome == null || nome.isEmpty())
-            System.err.println("O nome não pode ser vazio! ");
+            System.out.println("O nome não pode ser vazio! ");
         else {
             this.nome = nome;
             System.out.println("Categoria cadastrada com sucesso! ");
