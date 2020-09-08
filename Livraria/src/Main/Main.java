@@ -1,7 +1,7 @@
 package main;
 
 import entity.Autor;
-import Entity.Categoria;
+import entity.Categoria;
 
 import java.util.Date;
 
