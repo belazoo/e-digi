@@ -7,31 +7,50 @@ import java.util.Scanner;
 public class Autor {
 	private String email;
 	private String nome;
-	private Date data;
 
 	public Autor(String nome, String email) {
 		setNome(email);
 		setEmail(nome);
 		Date data = new Date();
-		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-		setData(data);
+		//System.out.println(data);
 	}
 
 	private void setEmail(String email) {
-		if( email == null || email.isEmpty())
-			System.out.println("O email nÃ£o pode ser vazio");
-		if( !email.matches("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"))
-			System.out.println("O formato do email e invalido! ");
-
-		this.email = email;
+		if(validaNome(email)) {
+			this.email = email;
+		}
+		else {
+			System.out.println("Email invalido, insira novamente! ");
+		}
 	}
+
 	private void setNome(String nome) {
-		if( nome == null || nome.isEmpty())
-			System.out.println("O nome nÃ£o pode ser vazio! ");
+		if(validaNome(nome)) {
+			this.nome = nome;
+		}
+		else {
+			System.out.println("Nome invalido, insira novamente! ");
+		}
+	}
 
-		this.nome = nome;
+	private boolean validaEmail(String email) {
+		if( email == null || email.isEmpty()) {
+			//System.out.println("O email nÃ£o pode ser vazio");
+			return false;
+		}
+		if( !email.matches("/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/")) {
+			//System.out.println("O formato do email e invalido! ");
+			return false;
+		}
+		return true;
 	}
-	private void setData(Date data) {
-		this.data = data;
+
+	private boolean validaNome(String nome) {
+		if( nome == null || nome.isEmpty()) {
+			System.out.println("O nome nÃ£o pode ser vazio! ");
+			return false;
+		}
+		return true;
 	}
+
 }

@@ -1,31 +1,33 @@
 package entity;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Categoria {
-    private String nome;
-    private Date data;
+import javax.swing.text.StyledEditorKit.BoldAction;
 
-    public Categoria(String nome) {
-        setNome(nome);
+public class Categoria {
+    private String nomeCategoria;
+
+    public Categoria(String nomeCategoria) {
+        setNomeCategoria(nomeCategoria);
         Date data = new Date();
-        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-        setData(data);
+        //System.out.println(data);
     }
 
-    public void setNome(String nome) {
-        if( nome == null || nome.isEmpty())
-            System.out.println("O nome não pode ser vazio! ");
-        else {
-            this.nome = nome;
+    public void setNomeCategoria(String nomeCategoria) {
+        if(validaCategoria(nomeCategoria)) {
+            this.nomeCategoria = nomeCategoria;
             System.out.println("Categoria cadastrada com sucesso! ");
+        } else {
+            System.out.println("Categoria invalida, insira novamente");
         }
     }
 
-    public void setData(Date data) {
-        this.data = data;
-    }
+    private Boolean validaCategoria(String nomeCategoria) {
+        if( nomeCategoria == null || nomeCategoria.isEmpty())
+            //System.out.println("O nome da categoria não pode ser vazio! ");
+            return false;
+        return true;
 
+    }
 
 }
