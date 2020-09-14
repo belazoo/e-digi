@@ -16,8 +16,9 @@ public class Autor {
 	}
 
 	private void setEmail(String email) {
-		if(validaNome(email)) {
+		if(validaEmail(email)) {
 			this.email = email;
+			System.out.println("Email do autor cadastrado com sucesso! ");
 		}
 		else {
 			System.out.println("Email invalido, insira novamente! ");
@@ -27,6 +28,7 @@ public class Autor {
 	private void setNome(String nome) {
 		if(validaNome(nome)) {
 			this.nome = nome;
+			System.out.println("Nome do autor cadastrado com sucesso");
 		}
 		else {
 			System.out.println("Nome invalido, insira novamente! ");
@@ -38,7 +40,7 @@ public class Autor {
 			//System.out.println("O email nÃ£o pode ser vazio");
 			return false;
 		}
-		if( !email.matches("/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/")) {
+		if( email.matches("/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/")) {
 			//System.out.println("O formato do email e invalido! ");
 			return false;
 		}
