@@ -9,33 +9,29 @@ public class Autor {
 	private String nome;
 
 	public Autor(String nome, String email) {
-		try {
-			setEmail(email);
-			setNome(nome);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		setEmail(email);
+		setNome(nome);
 		Date data = new Date();
 		//System.out.println(data);
 	}
 
-	private void setEmail(String email) throws Exception {
+	private void setEmail(String email) {
 		if(validaEmail(email)) {
 			this.email = email;
 			System.out.println("Email do autor cadastrado com sucesso! ");
 		}
 		else {
-			throw new Exception("Email invalido, insira novamente! ");
+			throw new IllegalArgumentException("Email invalido, insira novamente! ");
 		}
 	}
 
-	private void setNome(String nome) throws Exception {
+	private void setNome(String nome) {
 		if(validaNome(nome)) {
 			this.nome = nome;
 			System.out.println("Nome do autor cadastrado com sucesso");
 		}
 		else {
-			throw new Exception("Nome invalido, insira novamente! ");
+			throw new IllegalArgumentException("Nome invalido, insira novamente! ");
 		}
 	}
 
@@ -51,9 +47,9 @@ public class Autor {
 		return true;
 	}
 
-	private boolean validaNome(String nome) throws Exception {
+	private boolean validaNome(String nome) {
 		if( nome == null || nome.isEmpty()) {
-			throw new Exception("O nome não pode ser vazio! ");
+			throw new IllegalArgumentException("O nome não pode ser vazio! ");
 		}
 		return true;
 	}

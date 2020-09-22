@@ -8,21 +8,17 @@ public class Categoria {
     private String nomeCategoria;
 
     public Categoria(String nomeCategoria) {
-        try {
-            setNomeCategoria(nomeCategoria);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        setNomeCategoria(nomeCategoria);
         Date data = new Date();
         //System.out.println(data);
     }
 
-    public void setNomeCategoria(String nomeCategoria) throws Exception {
+    public void setNomeCategoria(String nomeCategoria) {
         if(validaCategoria(nomeCategoria)) {
             this.nomeCategoria = nomeCategoria;
             System.out.println("Categoria cadastrada com sucesso! ");
         } else {
-            throw new Exception("Categoria invalida, insira novamente");
+            throw new IllegalArgumentException("Categoria invalida, insira novamente");
         }
     }
 
